@@ -29,7 +29,7 @@ public class Snake {
         }
     }
     
-    public static void getHelp() {
+    public static void displayHelp() {
         JOptionPane.showMessageDialog(null, "Get Help Here");
     }
 
