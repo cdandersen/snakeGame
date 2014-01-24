@@ -41,9 +41,6 @@ public class SnakeHead {
     public void setDirection(String s) {
         direction = s;
     }
-    
-    public String[] getValidDirections() {
-        
-    }
+
     
 }
