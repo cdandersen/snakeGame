@@ -17,7 +17,10 @@ public class SnakeHead {
     String directions [] = {"up", "left", "down", "right"}; 
     
     public SnakeHead() {
-        
+        Atx = 0;
+        Aty = 0;
+        length = 3;
+        speed = 1;
     }
     
     public SnakeHead(int l, int s) {
