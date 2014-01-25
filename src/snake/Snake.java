@@ -25,7 +25,7 @@ public class Snake {
         int choice = JOptionPane.showConfirmDialog(null, "Your name has been set to: " + myPlayer.getName() + "\nis this correct?");
         //if they choose no it shows the help dialog, yes registers as 0
         if (choice == 1) {
-            getHelp();
+            displayHelp();
         }
     }
     
