@@ -14,6 +14,7 @@ public class Board {
     int width = 0;
     int height = 0;
     int pixelModifier = 10;
+    int m = 12;
     
     int boardArray [][] = new int[width][height];
     
@@ -26,18 +27,31 @@ public class Board {
         width = w;
         height = h;
     }
-    
     public void setSize(int w, int h) {
         width = w;
         height = h;
-    }
+    }  
+    
     
     public void setBox(int x, int y, int value) {
         boardArray[x][y] = value;
     }
     
-    public void setPixelModifier(int x) {
-        pixelModifier = x;
+    /**
+     *
+     * @param m
+     * @return
+     */
+    public int getPixelModifier(int m) {
+        if (m > 0){
+        pixelModifier = m;
+        return pixelModifier;
+    }
+        else {
+        System.out.println("Need positive number");
+        return 0;
+        }
+        
     }
     
     public double gridWidthInPixels() {
@@ -53,6 +67,5 @@ public class Board {
         d.setSize(gridWidthInPixels(), gridHeightInPixels());
         return d;
     }
-     
-
 }
+     
