@@ -15,8 +15,11 @@ public class Main {
     static Player myPlayer = new Player();
 
     public static void main(String[] args) {
-        startGame();
+        
+        Framey frame = new Framey();
+        //startGame();
     }
+    
     
     public static void startGame() {
         //String n = JOptionPane.showInputDialog(null, "Welcome to Snake\nPlease Enter Your Name");
@@ -41,5 +44,7 @@ public class Main {
     public static void displayHelp() {
         JOptionPane.showMessageDialog(null, "Get Help Here");
     }
+
+    
 
 }
