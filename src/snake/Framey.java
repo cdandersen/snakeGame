@@ -18,12 +18,16 @@ public class Framey extends JFrame implements ActionListener{
     JMenuBar menubar;
     JMenu AboutMenu;
     JMenu GameMenu;
+    JMenu DifficultyMenu;
     JMenuItem AboutItem;
     JMenuItem ExitItem;
     JMenuItem PlayerNameItem;
     JMenuItem NewGameItem;
     JMenuItem SaveGameItem;
     JMenuItem LoadGameItem;
+    JMenuItem BeginnerItem;
+    JMenuItem IntermediateItem;
+    JMenuItem ExpertItem;
     Board b;
     
     Player p = new Player();
@@ -36,19 +40,30 @@ public class Framey extends JFrame implements ActionListener{
         menubar = new JMenuBar();
         AboutMenu = new JMenu("Help");
         GameMenu = new JMenu("Game");
+        DifficultyMenu = new JMenu("Difficulty");
         AboutItem = new JMenuItem("About");
         ExitItem = new JMenuItem("Exit");
         PlayerNameItem = new JMenuItem("New Player");
         NewGameItem = new JMenuItem("New Game");
         LoadGameItem = new JMenuItem("Load Game");
         SaveGameItem = new JMenuItem("Save Game");
+        BeginnerItem = new JMenuItem("Beginner");
+        IntermediateItem = new JMenuItem("Intermediate");
+        ExpertItem = new JMenuItem("Expert");
+        
+
         
         ExitItem.addActionListener(this);
         AboutItem.addActionListener(this);
         PlayerNameItem.addActionListener(this);
         NewGameItem.addActionListener(this);
+        BeginnerItem.addActionListener(this);
+        IntermediateItem.addActionListener(this);
+        ExpertItem.addActionListener(this);
+        
         
         menubar.add(GameMenu);
+        menubar.add(DifficultyMenu);
         menubar.add(AboutMenu);
         
         AboutMenu.add(AboutItem);
@@ -58,6 +73,9 @@ public class Framey extends JFrame implements ActionListener{
         GameMenu.add(LoadGameItem);
         GameMenu.add(SaveGameItem);
         GameMenu.add(ExitItem);
+        DifficultyMenu.add(BeginnerItem);
+        DifficultyMenu.add(IntermediateItem);
+        DifficultyMenu.add(ExpertItem);
         
         setResizable(false);
         setJMenuBar(menubar);
@@ -103,6 +121,13 @@ public class Framey extends JFrame implements ActionListener{
             
         } else if (e.getSource() == SaveGameItem) {
             
+        } else if (e.getSource() == BeginnerItem){
+            JOptionPane.showMessageDialog(null, "You have chosen beginner mode.");
+        } else if (e.getSource() == IntermediateItem){
+            JOptionPane.showMessageDialog(null, "You have chosen intermediate mode.");
+        }else if (e.getSource() == ExpertItem){
+            JOptionPane.showMessageDialog(null, "You have chosen expert mode.");
+        }else{
         }
     }
 }
