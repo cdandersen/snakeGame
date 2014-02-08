@@ -64,11 +64,11 @@ public class Board {
         }
     }
     
-    public double gridWidthInPixels() {
+    public int gridWidthInPixels() {
         return width * pixelModifier;
     }
     
-    public double gridHeightInPixels() {
+    public int gridHeightInPixels() {
         return height * pixelModifier;
     }
     

@@ -9,7 +9,7 @@ public class Player {
     int currentScore;
 
     public Player() {
-        
+        name = "";
     }
     
     public Player(String n) {
