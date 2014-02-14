@@ -51,7 +51,6 @@ public class Framey extends JFrame implements ActionListener{
         IntermediateItem = new JMenuItem("Intermediate");
         ExpertItem = new JMenuItem("Expert");
         
-
         
         ExitItem.addActionListener(this);
         AboutItem.addActionListener(this);
@@ -94,9 +93,14 @@ public class Framey extends JFrame implements ActionListener{
         //draw board
         int startingPointX = 100;
         int startingPointY = 100;
-        for (int i = 0; i < b.getWidth(); i++) {
+        b.setPixelModifier(10);
+        int startModifier = 60;
+        for (int w = 0; w < b.getWidth(); w++) {
+            //g.drawRect(w*b.getPixelModifier(), h*b.getPixelModifier(), b.getWidth(), b.getHeight());
+            for (int h = 0; h < b.getHeight(); h++) {
             g.setColor(Color.red);
-            g.drawRect(startingPointX+ (i*b.gridWidthInPixels()), startingPointY + (i*b.gridHeightInPixels()), b.gridWidthInPixels(), b.gridHeightInPixels());
+            g.drawRect((w*b.getPixelModifier())+startModifier, (h*b.getPixelModifier())+startModifier, b.getPixelModifier(), b.getPixelModifier());
+            }
         }
     }
     
@@ -114,9 +118,7 @@ public class Framey extends JFrame implements ActionListener{
         } else if (e.getSource() == AboutItem) {
             JOptionPane.showMessageDialog(null, "SnakeGame\nCopyright 2014\n\nClayton Andersen & Tim Cotter");
         } else if (e.getSource() == NewGameItem) {
-            int boardSize = Integer.parseInt(JOptionPane.showInputDialog("How big would you like the board?\nExample:8 makes an 8x8 board"));
-            b = new Board(boardSize, boardSize);
-            repaint();
+            boardSize();
         } else if (e.getSource() == LoadGameItem) {
             
         } else if (e.getSource() == SaveGameItem) {
@@ -130,6 +132,21 @@ public class Framey extends JFrame implements ActionListener{
         }else{
         }
     }
-}
+    
+    public void boardSize() {
+        int boardSize = Integer.parseInt(JOptionPane.showInputDialog("How big would you like the board?\nExample:8 makes an 8x8 board"));
+            if (boardSize > 70) {
+                JOptionPane.showMessageDialog(null, "Board canot be that big, try again");
+                boardSize();
+            } else if (boardSize < 10) {
+                JOptionPane.showMessageDialog(null, "Board canot be that small, try again");
+                boardSize();
+            } else {
+                b = new Board(boardSize, boardSize);
+                repaint();
+            }
+    }
+            
+ }
 
 

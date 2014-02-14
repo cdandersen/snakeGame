@@ -1,15 +1,23 @@
 
 package snake;
 
+import javax.swing.JOptionPane;
+
 
 public class Player {
     
     String name;
     int highScore;
     int currentScore;
+    String [] list = {"300", "700"};
 
     public Player() {
         name = "";
+        String s;
+        for (int i = 0; i < list.length; i++) {
+            s += list[i];
+        }
+        JOptionPane.showMessageDialog(null, s);
     }
     
     public Player(String n) {
