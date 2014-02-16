@@ -3,6 +3,7 @@ package snake;
 
 import java.awt.Dimension;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /* Snake Game
  * CIT 260 - WInter 2014
@@ -18,6 +19,8 @@ public class Board {
     
     int boardArray [][] = new int[width][height];
     ArrayList list = new ArrayList(10);
+    
+
     
     
     public Board() {
@@ -41,7 +44,7 @@ public class Board {
     public int getHeight() {
         return height;
     }
-    
+
     
     public void setBox(int x, int y, int value) {
         boardArray[x][y] = value;

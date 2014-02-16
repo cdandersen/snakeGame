@@ -13,9 +13,9 @@ public class Player {
 
     public Player() {
         name = "";
-        String s;
-        for (int i = 0; i < list.length; i++) {
-            s += list[i];
+        String s = null;
+        for (String list1 : list) {
+            s += list1;
         }
         JOptionPane.showMessageDialog(null, s);
     }

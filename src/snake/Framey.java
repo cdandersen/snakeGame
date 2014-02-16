@@ -18,6 +18,7 @@ public class Framey extends JFrame implements ActionListener{
     JMenuBar menubar;
     JMenu AboutMenu;
     JMenu GameMenu;
+    JMenu StatsMenu;
     JMenu DifficultyMenu;
     JMenuItem AboutItem;
     JMenuItem ExitItem;
@@ -28,9 +29,12 @@ public class Framey extends JFrame implements ActionListener{
     JMenuItem BeginnerItem;
     JMenuItem IntermediateItem;
     JMenuItem ExpertItem;
+    JMenuItem WinsItem;
     Board b;
     
     Player p = new Player();
+    String [] list = {"Number Of Wins", "Tim  22", "Clayton  19", "Bryce  15", "Amanda  14", "Linda  11", "Bob  5"};
+
 
     public Framey() {
         super("Snake");
@@ -39,6 +43,7 @@ public class Framey extends JFrame implements ActionListener{
         //setLayout(layout);
         menubar = new JMenuBar();
         AboutMenu = new JMenu("Help");
+        StatsMenu = new JMenu("Stats");
         GameMenu = new JMenu("Game");
         DifficultyMenu = new JMenu("Difficulty");
         AboutItem = new JMenuItem("About");
@@ -50,6 +55,7 @@ public class Framey extends JFrame implements ActionListener{
         BeginnerItem = new JMenuItem("Beginner");
         IntermediateItem = new JMenuItem("Intermediate");
         ExpertItem = new JMenuItem("Expert");
+        WinsItem = new JMenuItem("Wins");
         
         
         ExitItem.addActionListener(this);
@@ -59,10 +65,12 @@ public class Framey extends JFrame implements ActionListener{
         BeginnerItem.addActionListener(this);
         IntermediateItem.addActionListener(this);
         ExpertItem.addActionListener(this);
+        WinsItem.addActionListener(this);
         
         
         menubar.add(GameMenu);
         menubar.add(DifficultyMenu);
+        menubar.add(StatsMenu);
         menubar.add(AboutMenu);
         
         AboutMenu.add(AboutItem);
@@ -75,6 +83,7 @@ public class Framey extends JFrame implements ActionListener{
         DifficultyMenu.add(BeginnerItem);
         DifficultyMenu.add(IntermediateItem);
         DifficultyMenu.add(ExpertItem);
+        StatsMenu.add(WinsItem);
         
         setResizable(false);
         setJMenuBar(menubar);
@@ -106,6 +115,7 @@ public class Framey extends JFrame implements ActionListener{
     
     public void newPlayer() {
         p.setName(JOptionPane.showInputDialog("Please Enter Your Name"));
+        
         repaint();
     }
 
@@ -129,8 +139,19 @@ public class Framey extends JFrame implements ActionListener{
             JOptionPane.showMessageDialog(null, "You have chosen intermediate mode.");
         }else if (e.getSource() == ExpertItem){
             JOptionPane.showMessageDialog(null, "You have chosen expert mode.");
+        }else if (e.getSource() == WinsItem){
+            isWins();
         }else{
         }
+    }
+        
+    public String isWins(){
+        String s = "";
+        for (String list1 : list) {
+            s += list1 + "\n";
+        }
+        JOptionPane.showMessageDialog(null, s);
+        return s;
     }
     
     public void boardSize() {
