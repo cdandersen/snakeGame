@@ -30,10 +30,12 @@ public class Framey extends JFrame implements ActionListener{
     JMenuItem IntermediateItem;
     JMenuItem ExpertItem;
     JMenuItem WinsItem;
+    JMenuItem ScoresItem;
     Board b;
     
     Player p = new Player();
     String [] list = {"Number Of Wins", "Tim  22", "Clayton  19", "Bryce  15", "Amanda  14", "Linda  11", "Bob  5"};
+    int [] scores = {400, 700, 930, 420, 230, 490, 1020};
 
 
     public Framey() {
@@ -56,6 +58,7 @@ public class Framey extends JFrame implements ActionListener{
         IntermediateItem = new JMenuItem("Intermediate");
         ExpertItem = new JMenuItem("Expert");
         WinsItem = new JMenuItem("Wins");
+        ScoresItem = new JMenuItem("Scores");
         
         
         ExitItem.addActionListener(this);
@@ -66,6 +69,7 @@ public class Framey extends JFrame implements ActionListener{
         IntermediateItem.addActionListener(this);
         ExpertItem.addActionListener(this);
         WinsItem.addActionListener(this);
+        ScoresItem.addActionListener(this);
         
         
         menubar.add(GameMenu);
@@ -84,6 +88,7 @@ public class Framey extends JFrame implements ActionListener{
         DifficultyMenu.add(IntermediateItem);
         DifficultyMenu.add(ExpertItem);
         StatsMenu.add(WinsItem);
+        StatsMenu.add(ScoresItem);
         
         setResizable(false);
         setJMenuBar(menubar);
@@ -141,7 +146,16 @@ public class Framey extends JFrame implements ActionListener{
             JOptionPane.showMessageDialog(null, "You have chosen expert mode.");
         }else if (e.getSource() == WinsItem){
             isWins();
-        }else{
+        }else if (e.getSource() == ScoresItem){
+            sort(scores);
+            String tmp = "";
+            for (int i = 0; i < scores.length; i++) {
+                tmp += scores[i];
+                tmp += "\n";
+            }
+            JOptionPane.showMessageDialog(null, "The Scores are:\n" + tmp);
+        } else {
+            
         }
     }
         
@@ -155,16 +169,28 @@ public class Framey extends JFrame implements ActionListener{
     }
     
     public void boardSize() {
-        int boardSize = Integer.parseInt(JOptionPane.showInputDialog("How big would you like the board?\nExample:8 makes an 8x8 board"));
+        int boardSize = Integer.parseInt(JOptionPane.showInputDialog("How big would you like the board?\nExample:12 makes a 12x12 board"));
             if (boardSize > 70) {
-                JOptionPane.showMessageDialog(null, "Board canot be that big, try again");
+                JOptionPane.showMessageDialog(null, "Board canot be that big, Board size must be between 10 and 70");
                 boardSize();
             } else if (boardSize < 10) {
-                JOptionPane.showMessageDialog(null, "Board canot be that small, try again");
+                JOptionPane.showMessageDialog(null, "Board canot be that small, Board size must be between 10 and 70");
                 boardSize();
             } else {
                 b = new Board(boardSize, boardSize);
                 repaint();
+            }
+    }
+    
+    public void sort(int [] list) {
+        //runs insertion sort on a list of ints
+        for (int i = 1; i < list.length; i++) {
+            int tmp = list[i];
+            int j;
+            for (j = i - 1; j >=0 && tmp < list[j]; j--) {
+                list[j+1] = list[j];
+            }
+        list[j+1] = tmp;
             }
     }
             
