@@ -161,11 +161,19 @@ public class Framey extends JFrame implements ActionListener{
         
     public String isWins(){
         String s = "";
+        int [] wins = {22, 19, 15, 14, 11, 5};
+        int sum = 0;
         for (String list1 : list) {
             s += list1 + "\n";
         }
-        JOptionPane.showMessageDialog(null, s);
-        return s;
+        for (int i = 0; i < wins.length; i++){
+            
+            sum += wins[i];
+        
+        }
+        String output = s + "\n" + "Total Wins   =" + sum;
+        JOptionPane.showMessageDialog(null, output);
+        return output;
     }
     
     public void boardSize() {
