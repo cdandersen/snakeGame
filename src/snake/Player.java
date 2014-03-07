@@ -1,15 +1,16 @@
 
 package snake;
 
+import java.io.Serializable;
 import javax.swing.JOptionPane;
 
 
-public class Player {
+public class Player implements Serializable {
     
-    String name;
-    int highScore;
-    int currentScore;
-    String [] list = {"300", "700"};
+    private String name;
+    private int highScore;
+    private int currentScore;
+    private String [] list = {"300", "700"};
 
     public Player() {
         name = "";

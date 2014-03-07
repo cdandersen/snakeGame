@@ -6,13 +6,14 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.Serializable;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 
-public class Framey extends JFrame implements ActionListener{
+public class Framey extends JFrame implements ActionListener, Serializable{
     
     BorderLayout layout = new BorderLayout();
     JMenuBar menubar;
@@ -159,7 +160,7 @@ public class Framey extends JFrame implements ActionListener{
         }
     }
         
-    public String isWins(){
+    private String isWins(){
         String s = "";
         int [] wins = {22, 19, 15, 14, 11, 5};
         int sum = 0;
@@ -176,7 +177,7 @@ public class Framey extends JFrame implements ActionListener{
         return output;
     }
     
-    public void boardSize() {
+    private void boardSize() {
         int boardSize = Integer.parseInt(JOptionPane.showInputDialog("How big would you like the board?\nExample:12 makes a 12x12 board"));
             if (boardSize > 70) {
                 JOptionPane.showMessageDialog(null, "Board canot be that big, Board size must be between 10 and 70");
@@ -190,7 +191,7 @@ public class Framey extends JFrame implements ActionListener{
             }
     }
     
-    public void sort(int [] list) {
+    private void sort(int [] list) {
         //runs insertion sort on a list of ints
         for (int i = 1; i < list.length; i++) {
             int tmp = list[i];

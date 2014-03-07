@@ -1,21 +1,23 @@
 
 package snake;
 
+import java.io.Serializable;
+
 /* Snake Game
  * CIT 260 - WInter 2014
  * Clayton Andersen - Tim Cotter
  */
 
-public class Snake {
+public class Snake implements Serializable {
     
-    int Atx;
-    int Aty;
-    int length;
-    int speed;
-    int direction;
+    private int Atx;
+    private int Aty;
+    private int length;
+    private int speed;
+    private int direction;
     
     //1 is Up, 2 is Left, 3 is Down, 4 is Right
-    int directions [] = {1, 2, 3, 4}; 
+    private int directions [] = {1, 2, 3, 4}; 
     
     public Snake() {
         Atx = 0;

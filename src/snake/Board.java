@@ -2,8 +2,8 @@
 package snake;
 
 import java.awt.Dimension;
+import java.io.Serializable;
 import java.util.ArrayList;
-import javax.swing.JOptionPane;
 
 /* Snake Game
  * CIT 260 - WInter 2014
@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
  */
 
 
-public class Board {
+public class Board implements Serializable {
     
     int width = 0;
     int height = 0;
