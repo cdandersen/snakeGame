@@ -15,7 +15,6 @@ public class Main implements ActionListener{
     static Board gameBoard = new Board(64, 64);
     static Snake mySnake = new Snake(3, 1);
     static Player myPlayer = new Player();
-    SnakeHead sHead = new SnakeHead();
     /*
     JFrame frame = new JFrame();
     BorderLayout layout = new BorderLayout();
