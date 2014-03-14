@@ -13,9 +13,10 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 
-public class Framey extends JFrame implements ActionListener, Serializable{
+public abstract class Menu extends JFrame implements ActionListener, Serializable{
     
     BorderLayout layout = new BorderLayout();
+
     JMenuBar menubar;
     JMenu AboutMenu;
     JMenu GameMenu;
@@ -39,7 +40,7 @@ public class Framey extends JFrame implements ActionListener, Serializable{
     int [] scores = {400, 700, 930, 420, 230, 490, 1020};
 
 
-    public Framey() {
+    public Menu() {
         super("Snake");
         setSize(1000, 800);
         setLocationRelativeTo(null);
@@ -63,7 +64,7 @@ public class Framey extends JFrame implements ActionListener, Serializable{
         
         
         ExitItem.addActionListener(this);
-        AboutItem.addActionListener(this);
+        AboutMenu.addActionListener(this);
         PlayerNameItem.addActionListener(this);
         NewGameItem.addActionListener(this);
         BeginnerItem.addActionListener(this);

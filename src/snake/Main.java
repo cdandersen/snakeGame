@@ -1,14 +1,8 @@
 
 package snake;
 
-import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 
 /* Snake Game
@@ -21,7 +15,8 @@ public class Main implements ActionListener{
     static Board gameBoard = new Board(64, 64);
     static Snake mySnake = new Snake(3, 1);
     static Player myPlayer = new Player();
-    
+    SnakeHead sHead = new SnakeHead();
+    /*
     JFrame frame = new JFrame();
     BorderLayout layout = new BorderLayout();
     
@@ -30,10 +25,10 @@ public class Main implements ActionListener{
     JMenuItem AboutItem = new JMenuItem("About");
     JMenuItem ExitItem = new JMenuItem("Exit");
     JMenuItem PlayerName = new JMenuItem("New Player");
-    JLabel PlayerNameLabel = new JLabel();
+    JLabel PlayerNameLabel = new JLabel();*/
 
     public static void main(String[] args) {
-        Framey frame = new Framey();
+        Menu frame = new Menu() {};
     }
     /*
     public Main() {

@@ -15,13 +15,12 @@ public class Board implements Serializable {
     
     int width = 0;
     int height = 0;
+    int fullWidth = 0;
+    int fullHeight = 0;
     int pixelModifier = 10;
     
     int boardArray [][] = new int[width][height];
-    ArrayList list = new ArrayList(10);
-    
-
-    
+    ArrayList list = new ArrayList(10); 
     
     public Board() {
         width = 10;
@@ -38,13 +37,12 @@ public class Board implements Serializable {
     }  
     
     public int getWidth() {
-        return width;
+        return fullWidth;
     }
     
     public int getHeight() {
-        return height;
+        return fullHeight;
     }
-
     
     public void setBox(int x, int y, int value) {
         boardArray[x][y] = value;
@@ -54,17 +52,8 @@ public class Board implements Serializable {
         return pixelModifier;
     }
       
-    public int setPixelModifier(int m){
-        if (m > 0)
-        {
+    public void setPixelModifier(int m){
             pixelModifier = m;
-            return pixelModifier;
-        } 
-        else 
-        {
-            System.out.println("Need positive number");
-            return 0;
-        }
     }
     
     public int gridWidthInPixels() {
@@ -72,7 +61,7 @@ public class Board implements Serializable {
     }
     
     public int gridHeightInPixels() {
-        return height * pixelModifier;
+        return height + pixelModifier;
     }
     
     public Dimension getFullBoardDimensions() {

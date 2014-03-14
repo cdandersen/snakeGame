@@ -48,6 +48,18 @@ public class Snake implements Serializable {
         direction = d;
     }
     
+    public void setDirectionString(String s) {
+        if (s.equalsIgnoreCase("Up")) {
+            direction = 1;
+        } else if (s.equalsIgnoreCase("Left")) {
+            direction = 2;
+        } else if (s.equalsIgnoreCase("Down")) {
+            direction = 3;
+        } else if (s.equalsIgnoreCase("Right")) {
+            direction = 4;
+        }
+    }
+    
     public int getDirection() {
         return direction;
     }

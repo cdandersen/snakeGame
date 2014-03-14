@@ -14,7 +14,7 @@ public class Player implements Serializable {
 
     public Player() {
         name = "";
-        String s = null;
+        String s = "";
         for (String list1 : list) {
             s += list1;
         }
