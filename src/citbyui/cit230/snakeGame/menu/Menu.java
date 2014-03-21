@@ -1,5 +1,5 @@
 
-package snake;
+package citbyui.cit230.snakeGame.menu;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -12,6 +12,8 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
+import snake.Board;
+import snake.Player;
 
 public abstract class Menu extends JFrame implements ActionListener, Serializable{
     

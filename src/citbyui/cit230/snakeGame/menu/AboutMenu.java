@@ -1,5 +1,5 @@
 
-package snake;
+package citbyui.cit230.snakeGame.menu;
 
 import javax.swing.JMenuItem;
 

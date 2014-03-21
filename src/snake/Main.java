@@ -1,6 +1,7 @@
 
 package snake;
 
+import citbyui.cit230.snakeGame.menu.Menu;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
