@@ -40,8 +40,13 @@ public class Snake implements Serializable {
     }
     
     public void setLoc(int x, int y) {
-        Atx = x;
-        Aty = y;
+        try {
+            Atx = x;
+            Aty = y;
+        } catch (Exception e) {
+            System.out.println("Cannot set to that location, location out of bounds: " + e.getMessage().toString());
+        }
+        
     }
     
     public void setDirection(int d) {

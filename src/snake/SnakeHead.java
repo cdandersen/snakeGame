@@ -13,8 +13,12 @@ public abstract class SnakeHead extends Snake {
     
     @Override
     public void setLoc(int x, int y) {
-        atX = x;
-        atY = y;
+        try {
+            atX = x;
+            atY = y;
+        } catch (Exception e) {
+            System.out.println("Cannot set to that location, location out of bounds: " + e.getMessage().toString());
+        }
     }
     
     @Override
