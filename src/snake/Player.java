@@ -14,11 +14,6 @@ public class Player implements Serializable {
 
     public Player() {
         name = "";
-        String s = "";
-        for (String list1 : list) {
-            s += list1;
-        }
-        JOptionPane.showMessageDialog(null, s);
     }
     
     public Player(String n) {
