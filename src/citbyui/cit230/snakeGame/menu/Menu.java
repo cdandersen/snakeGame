@@ -213,7 +213,7 @@ public class Menu extends JFrame implements ActionListener, KeyListener, Seriali
     public void start() {
         init();
         repaint();
-        t = new Timer(50, new ActionListener(){
+        t = new Timer(100, new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (snakeLives){
