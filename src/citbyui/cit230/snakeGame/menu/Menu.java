@@ -3,6 +3,7 @@ package citbyui.cit230.snakeGame.menu;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.KeyEventDispatcher;
@@ -167,8 +168,10 @@ public class Menu extends JFrame implements ActionListener, KeyListener, Seriali
             }
         }
         } else {
+            Font f = new Font("Helvetica", Font.PLAIN, 22);
+            graph.setFont(f);
             graph.setColor(Color.CYAN);
-            graph.drawString("Game Over: You Got " + (fruitsEaten * 100) + " points", ((b.getWidth()*b.getPixelModifier())/2)-50, (b.getHeight()*b.getPixelModifier())/2);
+            graph.drawString("Game Over: You Got " + (fruitsEaten * 100) + " points", ((b.getWidth()*b.getPixelModifier())/2)-90, (b.getHeight()*b.getPixelModifier())/2);
         }
         g.drawImage(buff, 0, 0, this.getWidth(), this.getHeight(), this);
     }
