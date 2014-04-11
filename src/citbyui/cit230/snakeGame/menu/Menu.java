@@ -66,6 +66,7 @@ public class Menu extends JFrame implements ActionListener, KeyListener, Seriali
     ArrayList<Point> tail = new ArrayList<>();
     
     int tailLength = 0;
+    int fruitsEaten = 0;
 
 
     public Menu() {
@@ -167,7 +168,7 @@ public class Menu extends JFrame implements ActionListener, KeyListener, Seriali
         }
         } else {
             graph.setColor(Color.CYAN);
-            graph.drawString("You SUCK AT THE GAME", 150, 150);
+            graph.drawString("Game Over: You Got " + (fruitsEaten * 100) + " points", ((b.getWidth()*b.getPixelModifier())/2)-50, (b.getHeight()*b.getPixelModifier())/2);
         }
         g.drawImage(buff, 0, 0, this.getWidth(), this.getHeight(), this);
     }
@@ -198,6 +199,7 @@ public class Menu extends JFrame implements ActionListener, KeyListener, Seriali
         currentHead = new Point(16, 16);
         currentFruit = new Point(3, 7);
         snakeLives = true;
+        fruitsEaten = 0;
         
         b.setBox(16, 16, 3);
         b.setBox(3, 7, 2);
@@ -296,6 +298,7 @@ public class Menu extends JFrame implements ActionListener, KeyListener, Seriali
             System.out.println("Tail Length: " + tail.size());
         }
         else{
+            fruitsEaten++;
             Random r = new Random();
             Point p = new Point(r.nextInt(31)+1, r.nextInt(31)+1);
             b.setBox(p.x, p.y, 2);
