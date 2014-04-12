@@ -255,7 +255,6 @@ public class Menu extends JFrame implements ActionListener, KeyListener, Seriali
         //detects a collision with the apple
         Point h = findHead();
         Point f = currentFruit;
-        System.out.println("Fruit Spot: " + f.x + ":" + f.y);
         isFruity = (h.getLocation().equals(f.getLocation()));
     }
     
@@ -280,7 +279,6 @@ public class Menu extends JFrame implements ActionListener, KeyListener, Seriali
         for(int i = 0; i<b.getWidth(); i++){
             for(int j = 0; j<b.getHeight(); j++){
                 if (b.getValue(i, j) == 3){
-                    System.out.println(i + ":" + j);
                     currentHead = new Point(i, j);
                     return new Point(i, j);
             }
@@ -306,10 +304,8 @@ public class Menu extends JFrame implements ActionListener, KeyListener, Seriali
         
         tail.add(head);
         if (!isFruity){
-            System.out.println("Not Fruity " + tail.get(0).x + ":" + tail.get(0).y);
             b.setBox(tail.get(0).x, tail.get(0).y, 0);
             tail.remove(0);
-            System.out.println("Tail Length: " + tail.size());
         }
         else {
             fruitsEaten++;

@@ -21,7 +21,6 @@ public class Board implements Serializable {
     
     // 0 is nothing, 1 is Head, 2 is Tail, 3 is apple
     int boardArray [][];
-    ArrayList list = new ArrayList(10); 
     
     public Board() {
         boardArray = new int[width][height];
