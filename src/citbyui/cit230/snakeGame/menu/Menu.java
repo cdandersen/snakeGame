@@ -290,6 +290,17 @@ public class Menu extends JFrame implements ActionListener, KeyListener, Seriali
         
     }
     
+    public void fruitStuff() {
+            Random r = new Random();
+            Point p = new Point(r.nextInt(31)+1, r.nextInt(31)+1);
+            if ((b.getValue(p.x, p.y) != 1) && (b.getValue(p.x, p.y) != 3)) {
+            b.setBox(p.x, p.y, 2);
+            currentFruit = p;
+            } else {
+                fruitStuff();
+            }
+    }
+    
     public void update(){
         Point head = findHead();
         
@@ -300,14 +311,10 @@ public class Menu extends JFrame implements ActionListener, KeyListener, Seriali
             tail.remove(0);
             System.out.println("Tail Length: " + tail.size());
         }
-        else{
+        else {
             fruitsEaten++;
-            Random r = new Random();
-            Point p = new Point(r.nextInt(31)+1, r.nextInt(31)+1);
-            b.setBox(p.x, p.y, 2);
-            currentFruit = p;
-        }
-        
+            fruitStuff();
+            }
         
         b.setBox((int)head.getX(), (int)head.getY(), 1);
         
